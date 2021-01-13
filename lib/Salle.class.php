@@ -100,6 +100,15 @@ class Salle {
 	 * @return int
 	 */
 
+	public final  function getNbChaiseSimple() {
+            $nbSimple = 0;
+            foreach ($this->mesChaises as $uneChaise) {
+                if (get_class($uneChaise) == 'Chaise') {
+                    $nbSimple++;
+                }
+            }
+            return $nbSimple;
+        }
 	
         
 	/**
