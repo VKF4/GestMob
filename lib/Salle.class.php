@@ -83,6 +83,16 @@ class Salle {
             return $this->mesChaises->count();
 	}
 
+	public final  function getNbChaiseBureau() {
+            $nbBureau = 0;
+            foreach ($this->mesChaises as $uneChaise) {
+                if (get_class($uneChaise) == 'ChaiseBureau') {
+                    $nbBureau++;
+                }
+            }
+            return $nbBureau;
+        }        
+
         
 	/**
 	 * Retourne le nombre de chaises simples présentes dans la salle
